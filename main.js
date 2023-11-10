@@ -4,7 +4,7 @@ Webcam.set({
   image_format : 'png',
   png_quality:90
 });
-
+canvas.center();
 camera = document.getElementById("camera");
 Webcam.attach('#camera');
 
@@ -22,6 +22,21 @@ function modelLoaded(){
 
 console.log('ml5');
 
+function check(){
+  img = document.getElementById("captured_image");
+ classifier.classify(img, gotResult);
+  }
+function gotResult(error, results){
+  if(error){
+     console.log(error);
+  }
+}
+
+
+function classify(){
+ml5.js.pass();
+v
+}
 
 
 
