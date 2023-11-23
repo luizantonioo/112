@@ -30,6 +30,11 @@ function gotResult(error, results){
   if(error){
      console.log(error);
   }
+  else{
+console.log(results);
+document.getElementById("resultObjectName").innerHTML = results[0].label
+document.getElementById("resultObjectAccuracy").innerHTML = results[0].confidence.toFixed(3)
+  }
 }
 
 
