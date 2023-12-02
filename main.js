@@ -4,7 +4,9 @@ Webcam.set({
   image_format : 'png',
   png_quality:90
 });
-canvas.center();
+
+canvas.center("defined");
+
 camera = document.getElementById("camera");
 Webcam.attach('#camera');
 
@@ -23,17 +25,16 @@ function modelLoaded(){
 console.log('ml5');
 
 function check(){
-  img = document.getElementById("captured_image");
+  img = document.getElementById('captured_image');
  classifier.classify(img, gotResult);
   }
 function gotResult(error, results){
   if(error){
-     console.log(error);
-  }
-  else{
+     console.error(error);
+  } else{
 console.log(results);
-document.getElementById("resultObjectName").innerHTML = results[0].label
-document.getElementById("resultObjectAccuracy").innerHTML = results[0].confidence.toFixed(3)
+document.getElementById("resultObjectName").innerHTML = results[0].label;
+document.getElementById("resultObjectAccuracy").innerHTML = results[0].confidence.toFixed(3);
   }
 }
 
